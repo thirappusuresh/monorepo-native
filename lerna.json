@@ -1,0 +1,10 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "start": "lerna run start"
+  },
+  "version": "0.0.0"
+}

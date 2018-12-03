@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "name": "yarn-workspaces-web-native",
+  "devDependencies": {
+    "lerna": "^3.4.3"
+  }
+}
