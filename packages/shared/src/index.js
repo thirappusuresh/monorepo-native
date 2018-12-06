@@ -10,5 +10,5 @@ module.exports = {
   WithDataWrapper: WithDataWrapper,
   WithData: WithData,
   WithState: WithState,
-  SECRET_SHARED_CODE: "test"
+  SECRET_SHARED_CODE: "test1"
 };

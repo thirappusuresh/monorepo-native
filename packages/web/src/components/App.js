@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SECRET_SHARED_CODE, withData } from "shared";
+import { SECRET_SHARED_CODE, WithData } from "shared";
 
 const App = ({ apiState, data, refetchData }) => {
   return (
@@ -32,4 +32,4 @@ const App = ({ apiState, data, refetchData }) => {
   );
 };
 
-export default withData(App);
+export default WithData(App);
