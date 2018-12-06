@@ -2,10 +2,10 @@
     "name": "shared",
     "version": "2.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "lib",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "watch": "./node_modules/.bin/babel src --watch --out-file index.js",
+        "watch": "rm -rf lib/* && babel src --watch --out-dir lib --source-maps inline --copy-files",
         "build": "webpack --watch --mode development"
     },
     "keywords": [],
