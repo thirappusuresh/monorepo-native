@@ -1,60 +1,50 @@
-import React from "react";
-import { StyleSheet, Text, Button, View } from "react-native";
-import { SECRET_SHARED_CODE, withData } from "shared";
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
 
-const App = ({ apiState, data, refetchData, errors = {} }) => {
-  const canRetry = apiState.isSuccess() || apiState.isError();
-  return (
-    <View style={styles.container}>
-      <Text style={styles.getStartedText}>Monorepo Demo</Text>
-      <Text style={styles.getStartedText1}>This text is coming from shared component: <Text style={styles.sharedText}>{SECRET_SHARED_CODE}</Text></Text>
-      <Button onPress={refetchData} title="Trigger shared alert" />
-    </View>
-  );
-};
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View} from 'react-native';
+import {SECRET_SHARED_CODE} from "shared";
 
-export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    marginTop: 25,
-    padding: 10
-  },
-  developmentModeText: {
-    marginBottom: 20,
-    color: "rgba(0,0,0,0.4)",
-    fontSize: 14,
-    lineHeight: 19,
-    textAlign: "center"
-  },
-
-  codeHighlightText: {
-    color: "rgba(96,100,109, 0.8)",
-    textAlign: "center"
-  },
-  boldText: {
-    fontWeight: "800"
-  },
-  codeHighlightContainer: {
-    backgroundColor: "rgba(0,0,0,0.05)",
-    borderRadius: 3,
-    paddingHorizontal: 4
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: "rgba(96,100,109, 1)",
-    lineHeight: 24,
-    textAlign: "center",
-    marginTop: 10
-  },
-  getStartedText1: {
-    textAlign: "center",
-    marginTop: 10,
-    marginBottom: 10
-  },
-  sharedText: {
-    color: "red"
-  }
+const instructions = Platform.select({
+  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
+  android:
+    'Double tap R on your keyboard to reload,\n' +
+    'Shake or press menu button for dev menu',
 });
 
-export default withData(App);
+type Props = {};
+export default class App extends Component<Props> {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>Welcome to React Native!{SECRET_SHARED_CODE}</Text>
+        <Text style={styles.instructions}>To get started, edit App.js</Text>
+        <Text style={styles.instructions}>{instructions}</Text>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
