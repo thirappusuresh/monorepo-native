@@ -3,5 +3,8 @@
   "name": "yarn-workspaces-web-native",
   "devDependencies": {
     "lerna": "^3.4.3"
+  },
+  "dependencies": {
+    "react-native-material-textfield": "^0.12.0"
   }
 }
