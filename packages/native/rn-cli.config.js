@@ -11,3 +11,10 @@ module.exports = metroConfigHelper(projectRoot)
     // and common extensions ("ts" and "tsx")
     .typeScript(true) 
     .generate();
+
+const path = require('path');
+module.exports = {
+  projectRoot: __dirname,
+  watchFolders: [path.resolve(__dirname, '..')],
+};
+
